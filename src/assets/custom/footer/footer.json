@@ -1,0 +1,88 @@
+[
+    {
+        "title": "About Ironroom",
+        "content": "Ironroom's mission is to make lifting awesome. We do this through amazing content and a class leading tracker.",
+        "social": [
+            {
+                "title": "faTwitter",
+                "link": "#"
+            },
+            {
+                "title": "facebook",
+                "link": "#"
+            },
+            {
+                "title": "instagram",
+                "link": "#"
+            },
+            {
+                "title": "pinterest",
+                "link": "#"
+            },
+            {
+                "title": "vimeo",
+                "link": "#"
+            }
+        ],
+        "lg": "4"
+    },
+    {
+        "title": "Menu",
+        "links": [
+            {
+                "title": "Features",
+                "link": "/"
+            },
+            {
+                "title": "Subscriptions",
+                "link": "/category-rooms"
+            },
+            {
+                "title": "About",
+                "link": "/category-2-rooms"
+            },
+            {
+                "title": "Blog",
+                "link": "/category-3-rooms"
+            }
+        ],
+        "lg": "2",
+        "md": "6"
+    },
+    {
+        "title": "Get Started",
+        "links": [
+            {
+                "title": "Local",
+                "link": "/compare"
+            },
+            {
+                "title": "Support",
+                "link": "/team"
+            },
+            {
+                "title": "Business",
+                "link": "/contact"
+            },
+            {
+                "title": "Terms",
+                "link": "/legal"
+            },
+            {
+                "title": "Privacy",
+                "link": "/legal"
+            }
+        ],
+        "lg": "2",
+        "md": "6"
+    },
+    {
+        "title": "Newsletter",
+        "content": "Join our kickass newsletter for for updates, access to exclusive deals, and more",
+        "contentBottomMargin": "3",
+        "form": {
+            "placeholder": "Your Email Address"
+        },
+        "lg": "4"
+    }
+]

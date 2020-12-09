@@ -1,0 +1,40 @@
+{
+
+    "popular": {
+        "title": "Instagram",
+        "content": "Because we are making lifting great again",
+        "button": "Take me there",
+        "places": [
+            {
+                "title": "Kathmandu",
+                "subTitle": "Spirituality & mountains",
+                "img": "1.jpg",
+                "link": "category-3"
+            },
+            {
+                "title": "Medellín",
+                "subTitle": "Tropical paradise",
+                "img": "2.jpg",
+                "link": "category-3"
+            },
+            {
+                "title": "Bangkok",
+                "subTitle": "Temples and street food",
+                "img": "3.jpg",
+                "link": "category-3"
+            },
+            {
+                "title": "Kyoto",
+                "subTitle": "Imperial capital",
+                "img": "4.jpg",
+                "link": "category-3"
+            },
+            {
+                "title": "Los Angeles",
+                "subTitle": "City of angeles",
+                "img": "5.jpg",
+                "link": "category-3"
+            }
+        ]
+    }
+}

@@ -1,0 +1,4 @@
+for advanced table, show one with search and export csv
+social login button
+keep side bar static on scroll
+place footer on side bar

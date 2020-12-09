@@ -1,0 +1,24 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
+import { Button } from "reactstrap";
+
+const Page500 = () => (
+  <div className="w-100 py-5 px-md-5 px-xl-6 position-relative" >
+    <div className="text-center">
+      <h1 className="display-1 font-weight-bold">500</h1>
+      <p className="h1">Internal server error.</p>
+      <p className="h2 font-weight-normal mt-3 mb-4">
+        The server encountered something unexpected that didn't allow it to
+        complete the request.
+      </p>
+      <Link to="/dashboard">
+        <Button color="primary" size="lg">
+          Return to website
+        </Button>
+      </Link>
+    </div>
+  </div>
+);
+
+export default Page500;

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Spark - The #1 app for weight lifters</title>
+
+    <!-- PICK ONE OF THE STYLES BELOW -->
+     <link href="/css/modern.css" rel="stylesheet"> 
+    <!-- <link href="/css/classic.css" rel="stylesheet"> -->
+    <!-- <link href="/css/dark.css" rel="stylesheet"> -->
+    <!-- <link href="/css/light.css" rel="stylesheet">-->
+    <style>body { opacity: 0; }</style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <div class="splash active">
+      <div class="splash-icon"></div>
+    </div>
+
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyByTukGDR5OWPhueI-ud8Tdmpc54OQwVH0",
+        authDomain: "fryz-demo.firebaseapp.com",
+        databaseURL: "https://fryz-demo.firebaseio.com",
+        projectId: "fryz-demo",
+        storageBucket: "fryz-demo.appspot.com",
+        messagingSenderId: "600306018366",
+        appId: "1:600306018366:web:f0fdd42daf79052426496f",
+        measurementId: "G-1J475YJGFM"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+  </body>
+</html>
