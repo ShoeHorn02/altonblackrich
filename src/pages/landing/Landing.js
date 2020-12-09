@@ -97,52 +97,7 @@ const bg_dark = {
 };
 
 
-
-
-
-
-
-
-
 const Intro = () => {
-
-  const handleClick = (e) => {
-    document.getElementById('demos').scrollIntoView();
-    e.preventDefault();
-  }
-
-  return (
-  <section class="vh-100 landing-intro pt-5" style={{'background': '#113261','display': 'flex', 'justify-content': 'center', 'align-items': 'center','height': '200px'}} >
-    <Container>
-    <div  ckassName= "pt-5" style={{width:'100%',height:'10%', position: 'relative', overflow:'none'}}>
-      <Row >
-        <Col md="7" className="mx-auto text-center mt-5">
-          <div className="landing-intro-title mb-3 text-center text-white">
-            <h1 class="display-3 text-center text-white">
-              The #1 app for <span class="">weight lifters</span>
-            </h1>
-          </div>
-          <p className="text-white mb-3"> Build Muscle. Feel Good. Grow. Becasue reistance training is awesome. </p>
-        </Col>
-      </Row>
-      <Row>
-        <Col md="8" className="mx-auto text-center"
-        >
-          <div className="mt-4 " >
-            <CardImg
-              src={three}
-              className="img-fluid rounded-lg"
-              style={{width:'100%',height:'100%'}}
-              alt="Corporate Bootstrap 4 Dashboard Theme" />
-          </div>
-        </Col>
-      </Row>
-      </div>
-    </Container>
-  </section>
-)};
-
-const Intro2 = () => {
 
   const handleClick = (e) => {
     document.getElementById('demos').scrollIntoView();
@@ -154,9 +109,9 @@ const Intro2 = () => {
     <Container>
       <Row>
         <Col md="7" className="mx-auto text-center">
-          <h1 className="landing-intro-title my-4">The #1 app for weight lifters</h1>
+          <h1 className="landing-intro-title my-4">The #1 app for word counting</h1>
 
-          <p className="landing-intro-subtitle">Build. Grow. Inspire. Change. Feel Good. Becasue Lifting Is Awesome.</p>
+          <p className="landing-intro-subtitle">Count. Grow. Inspire. Change. Be A Words Smith. <br />Becasue Counting Words and letters Are Awesome.</p>
 
 
 
@@ -908,8 +863,7 @@ const Landing = props => {
 
   return (
     <React.Fragment>
-      <Header />
-      <Intro2 />
+      <Intro />
       <Footer />
     </React.Fragment>
   )
