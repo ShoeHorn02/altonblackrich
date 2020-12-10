@@ -12,9 +12,11 @@ import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
+import ReactQuill from "react-quill";
 import {
   Button,
+  CardHeader,
+  CardTitle,
   Card,
   Col,
   Container,
@@ -99,13 +101,9 @@ const bg_dark = {
 
 const Intro = () => {
 
-  const handleClick = (e) => {
-    document.getElementById('demos').scrollIntoView();
-    e.preventDefault();
-  }
 
   return (
-  <section className="landing-intro pt-5">
+  <section className="landing-intro text-dark pt-5">
     <Container>
       <Row>
         <Col md="7" className="mx-auto text-center">
@@ -119,11 +117,15 @@ const Intro = () => {
         </Col>
       </Row>
       <Row>
-        <Col md="8" className="mx-auto text-center">
-          <div className="mt-4 landing-intro-img">
-						<img src={one} className="img-fluid rounded-lg" alt="Corporate Bootstrap 4 Dashboard Theme" />
-					</div>
-        </Col>
+      <Col md="12">
+      <Card>
+
+        <CardBody >
+          <ReactQuill placeholder="Type something" />
+        </CardBody>
+      </Card>
+
+      </Col>
       </Row>
     </Container>
 

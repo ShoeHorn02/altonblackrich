@@ -4,14 +4,35 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import Loader from "../../components/Loader"
 import { SOCKET_URL } from '../../redux/actions/API'
+import {
+  Button,
+  CardHeader,
+  CardTitle,
+  Card,
+  Col,
+  Container,
+  Row,
+  CardImg,
+  CardBody,
+  Media,
+  FormGroup,
+  Label,
+  Input,
+  CustomInput,
+  Form,
+} from "reactstrap";
+import ReactQuill from "react-quill";
+
 
 class LandingMain extends React.Component {
+
 
 
   constructor(props) {
     super(props);
     this.state = {
       socketState: null,
+      text: null,
     }
   }
 
@@ -63,21 +84,107 @@ class LandingMain extends React.Component {
     };
   }
 
+
+
+  componentWillUnmount() {
+    this.disconnect();
+  }
+
+
+  disconnect() {
+    try{this.socketRef.close()} catch(e) { console.error(e); }
+  }
+
+
+  sendMessage(data) {
+    try {
+      this.socketRef.send(JSON.stringify({ ...data }));
+    }
+    catch(err) {
+      console.log(err.message);
+    }
+  }
+
+
+  fetchMessages() {
+    this.sendMessage({
+      command: "count_text",
+      text: this.state.text
+    });
+  }
+
+
+  componentDidUpdate() {
+    if (this.state.socketState === 1 && this.state.text !== null) {
+      this.setState({
+        text: null,
+      });
+      this.fetchMessages();
+    }
+  }
+
+
+  socketNewMessage(data) {
+    const parsedData = JSON.parse(data);
+    console.log(parsedData)
+  }
+
+  handleChange = (content, delta, source, editor) => {
+    const text = editor.getText(content);
+    console.log(text)
+    this.setState({ text: text })
+  }
+
+
+  renderMain = () => {
+    return(
+      <section className="landing-intro text-dark pt-5">
+        <Container>
+          <Row>
+            <Col md="7" className="mx-auto text-center">
+              <h1 className="landing-intro-title my-4">The #1 app for word counting</h1>
+
+              <p className="landing-intro-subtitle">Count. Grow. Inspire. Change. Be A Words Smith. <br />Becasue Counting Words and letters Are Awesome.</p>
+
+
+
+
+            </Col>
+          </Row>
+          <Row>
+          <Col md="12">
+          <Card>
+
+            <CardBody >
+              <ReactQuill
+                placeholder="Type something and we will count"
+                onChange={this.handleChange}
+                />
+            </CardBody>
+          </Card>
+
+          </Col>
+          </Row>
+        </Container>
+
+
+      </section>
+    )
+  }
+
   render() {
     if (this.props.isLoading) {
       return <Loader />;
     }
-    else if (this.props.isAuthenticated) {
-      return <Redirect to="/dashboard" />;
-    }
     return (
-      <Landing />
+      <div>
+        {this.renderMain()}
+      </div>
     );
   }
 }
 
 const mapStateToProps = (state) => ({
-  isAuthenticated: state.auth.isAuthenticated,
   isLoading: state.auth.isLoading,
 });
 
