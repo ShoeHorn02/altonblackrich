@@ -22,6 +22,7 @@ import {
   Form,
 } from "reactstrap";
 import ReactQuill from "react-quill";
+import { Truck, Users, DollarSign, ShoppingCart } from "react-feather";
 
 
 class LandingMain extends React.Component {
@@ -33,6 +34,8 @@ class LandingMain extends React.Component {
     this.state = {
       socketState: null,
       text: null,
+      word_count: 0,
+      charachter_count: 0,
     }
   }
 
@@ -127,6 +130,10 @@ class LandingMain extends React.Component {
   socketNewMessage(data) {
     const parsedData = JSON.parse(data);
     console.log(parsedData)
+    this.setState({
+      word_count: parsedData.words_count,
+      charachter_count: parsedData.charachter_count
+    })
   }
 
   handleChange = (content, delta, source, editor) => {
@@ -136,6 +143,63 @@ class LandingMain extends React.Component {
   }
 
 
+
+  renderWordCountCard = () => {
+    return(
+      <Card>
+        <CardBody>
+          <Row>
+            <Col className="mt-0">
+              <CardTitle tag="h5">Word Count</CardTitle>
+            </Col>
+
+            <Col className="col-auto">
+              <div className="avatar">
+                <div className="avatar-title rounded-circle bg-primary-dark">
+                  <Truck className="feather align-middle" />
+                </div>
+              </div>
+            </Col>
+          </Row>
+          <h1 className="display-5 mt-1 mb-3">{this.state.word_count}</h1>
+          <div className="mb-0">
+            <div className="mb-0 text-muted">
+              includes whole words
+            </div>
+          </div>
+        </CardBody>
+      </Card>
+    )
+  }
+
+
+
+  renderLetterCountCard = () => {
+    return(
+      <CardBody>
+        <Row>
+          <Col className="mt-0">
+            <CardTitle tag="h5">Charachter Count</CardTitle>
+          </Col>
+
+          <Col className="col-auto">
+            <div className="avatar">
+              <div className="avatar-title rounded-circle bg-primary-dark">
+                <Users className="feather align-middle" />
+              </div>
+            </div>
+          </Col>
+        </Row>
+        <h1 className="display-5 mt-1 mb-3">{this.state.charachter_count}</h1>
+        <div className="mb-0">
+          <div className="mb-0 text-muted">
+            includes spaces
+          </div>
+        </div>
+      </CardBody>
+    )
+  }
+
   renderMain = () => {
     return(
       <section className="landing-intro text-dark pt-5">
@@ -144,7 +208,7 @@ class LandingMain extends React.Component {
             <Col md="7" className="mx-auto text-center">
               <h1 className="landing-intro-title my-4">The #1 app for word counting</h1>
 
-              <p className="landing-intro-subtitle">Count. Grow. Inspire. Change. Be A Words Smith. <br />Becasue Counting Words and letters Are Awesome.</p>
+              <p className="landing-intro-subtitle">Count. Grow. Inspire. Change. Be A Words Smith. <br />Becasue Counting Words and Letters Are Awesome.</p>
 
 
 
@@ -165,12 +229,27 @@ class LandingMain extends React.Component {
 
           </Col>
           </Row>
+          <Row>
+            <Col sm="6">
+              {this.renderWordCountCard()}
+              </Col>
+              <Col sm="6">
+              <Card>
+              {this.renderLetterCountCard()}
+              </Card>
+            </Col>
+
+          </Row>
         </Container>
 
 
       </section>
     )
   }
+
+
+
+
 
   render() {
     if (this.props.isLoading) {
