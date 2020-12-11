@@ -15,15 +15,15 @@ build:
 deploy-development:
   stage: deploy
   only:
-    - firebase
+    - development
   script:
     - npm install
     - npm audit fix
     - CI=false npm run build
     - npm rebuild node-sass
     - npm install -g firebase-tools
-    - firebase use fryz-demo --token $FIREBASE_TOKEN
-    - firebase target:apply hosting development fryz-develop --token $FIREBASE_TOKEN
+    - firebase use high-magpie-176621 --token $FIREBASE_TOKEN
+    - firebase target:apply hosting development high-magpie-176621 --token $FIREBASE_TOKEN
     - firebase deploy --only hosting:development --token $FIREBASE_TOKEN
 
 deploy-production:
@@ -36,6 +36,6 @@ deploy-production:
     - CI=false npm run build
     - npm rebuild node-sass
     - npm install -g firebase-tools
-    - firebase use fryz-demo --token $FIREBASE_TOKEN
-    - firebase target:apply hosting production fryz-demo --token $FIREBASE_TOKEN
+    - firebase use high-magpie-176621 --token $FIREBASE_TOKEN
+    - firebase target:apply hosting production wordcounter.lol --token $FIREBASE_TOKEN
     - firebase deploy --only hosting:production --token $FIREBASE_TOKEN
