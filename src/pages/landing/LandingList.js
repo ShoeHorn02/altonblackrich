@@ -22,7 +22,7 @@ import {
   Form,
 } from "reactstrap";
 import ReactQuill from "react-quill";
-import { Truck, Users, DollarSign, ShoppingCart } from "react-feather";
+import { Book, BarChart2, Bold, Facebook,  Twitter, Pocket} from "react-feather";
 
 
 class LandingMain extends React.Component {
@@ -36,7 +36,11 @@ class LandingMain extends React.Component {
       text: null,
       word_count: 0,
       charachter_count: 0,
+      charachter_count_no_space: 0,
       channel: 1234,
+      facebook: "250/250",
+      twitter: "280/280",
+      google: "300/300"
     }
   }
 
@@ -138,13 +142,20 @@ class LandingMain extends React.Component {
     const parsedData = JSON.parse(data);
     this.setState({
       word_count: parsedData.words_count,
-      charachter_count: parsedData.charachter_count
+      charachter_count: parsedData.charachter_count,
+      space_count: parsedData.space_count,
+      charachter_count_no_space: parsedData.charachter_count_no_space,
+      facebook: parsedData.facebook,
+      google: parsedData.google,
+      twitter: parsedData.twitter,
     })
   }
 
   handleChange = (content, delta, source, editor) => {
     const text = editor.getText(content);
-    this.setState({ text: text })
+    this.setState({
+      text: text,
+    })
   }
 
 
@@ -161,7 +172,7 @@ class LandingMain extends React.Component {
             <Col className="col-auto">
               <div className="avatar">
                 <div className="avatar-title rounded-circle bg-primary-dark">
-                  <Truck className="feather align-middle" />
+                  <Book className="feather align-middle" />
                 </div>
               </div>
             </Col>
@@ -177,20 +188,18 @@ class LandingMain extends React.Component {
     )
   }
 
-
-
-  renderLetterCountCard = () => {
+  renderLetterCountCard_Spaces = () => {
     return(
       <CardBody>
         <Row>
           <Col className="mt-0">
-            <CardTitle tag="h5">Charachter Count</CardTitle>
+            <CardTitle tag="h5">Character Count</CardTitle>
           </Col>
 
           <Col className="col-auto">
             <div className="avatar">
               <div className="avatar-title rounded-circle bg-primary-dark">
-                <Users className="feather align-middle" />
+                <BarChart2 className="feather align-middle" />
               </div>
             </div>
           </Col>
@@ -198,12 +207,124 @@ class LandingMain extends React.Component {
         <h1 className="display-5 mt-1 mb-3">{this.state.charachter_count}</h1>
         <div className="mb-0">
           <div className="mb-0 text-muted">
-            includes spaces
+            includes {this.state.space_count === 0? '' : this.state.space_count === null? '' : this.state.space_count} spaces
           </div>
         </div>
       </CardBody>
     )
   }
+
+  renderLetterCountCard_NoSpaces = () => {
+    return(
+      <CardBody>
+        <Row>
+          <Col className="mt-0">
+            <CardTitle tag="h5">Letter Count</CardTitle>
+          </Col>
+
+          <Col className="col-auto">
+            <div className="avatar">
+              <div className="avatar-title rounded-circle bg-primary-dark">
+                <Bold className="feather align-middle" />
+              </div>
+            </div>
+          </Col>
+        </Row>
+        <h1 className="display-5 mt-1 mb-3">{this.state.charachter_count_no_space}</h1>
+        <div className="mb-0">
+          <div className="mb-0 text-muted">
+            does not include {this.state.space_count === 0? '' : this.state.space_count === null? '' : this.state.space_count} spaces
+          </div>
+        </div>
+      </CardBody>
+    )
+  }
+
+
+
+  renderFaceBook = () => {
+    return(
+      <Card>
+        <CardBody>
+          <Row>
+            <Col className="mt-0">
+              <CardTitle tag="h5">FaceBook</CardTitle>
+            </Col>
+
+            <Col className="col-auto">
+              <div className="avatar">
+                <div className="avatar-title rounded-circle bg-primary-dark">
+                  <Facebook className="feather align-middle" />
+                </div>
+              </div>
+            </Col>
+          </Row>
+          <h1 className="display-5 mt-1 mb-3">{this.state.facebook}</h1>
+          <div className="mb-0">
+            <div className="mb-0 text-muted">
+              includes whole words
+            </div>
+          </div>
+        </CardBody>
+      </Card>
+    )
+  }
+
+  renderTwitter = () => {
+    return(
+      <CardBody>
+        <Row>
+          <Col className="mt-0">
+            <CardTitle tag="h5">Twitter</CardTitle>
+          </Col>
+
+          <Col className="col-auto">
+            <div className="avatar">
+              <div className="avatar-title rounded-circle bg-primary-dark">
+                <Twitter className="feather align-middle" />
+              </div>
+            </div>
+          </Col>
+        </Row>
+        <h1 className="display-5 mt-1 mb-3">{this.state.twitter}</h1>
+        <div className="mb-0">
+          <div className="mb-0 text-muted">
+            does not include {this.state.space_count === 0? '' : this.state.space_count === null? '' : this.state.space_count} spaces
+          </div>
+        </div>
+      </CardBody>
+    )
+  }
+
+  renderGoogle = () => {
+    return(
+      <CardBody>
+        <Row>
+          <Col className="mt-0">
+            <CardTitle tag="h5">Google</CardTitle>
+          </Col>
+
+          <Col className="col-auto">
+            <div className="avatar">
+              <div className="avatar-title rounded-circle bg-primary-dark">
+                <Pocket className="feather align-middle" />
+              </div>
+            </div>
+          </Col>
+        </Row>
+        <h1 className="display-5 mt-1 mb-3">{this.state.google}</h1>
+        <div className="mb-0">
+          <div className="mb-0 text-muted">
+            includes {this.state.space_count === 0? '' : this.state.space_count === null? '' : this.state.space_count} spaces
+          </div>
+        </div>
+      </CardBody>
+    )
+  }
+
+
+
+
 
   renderMain = () => {
     return(
@@ -235,19 +356,36 @@ class LandingMain extends React.Component {
           </Col>
           </Row>
           <Row>
-            <Col sm="6">
+            <Col sm="4">
               {this.renderWordCountCard()}
-              </Col>
-              <Col sm="6">
+            </Col>
+            <Col sm="4">
               <Card>
-              {this.renderLetterCountCard()}
+              {this.renderLetterCountCard_Spaces()}
               </Card>
             </Col>
-
+            <Col sm="4">
+              <Card>
+              {this.renderLetterCountCard_NoSpaces()}
+              </Card>
+            </Col>
+          </Row>
+          <Row>
+            <Col sm="4">
+              {this.renderFaceBook()}
+            </Col>
+            <Col sm="4">
+              <Card>
+              {this.renderTwitter()}
+              </Card>
+            </Col>
+            <Col sm="4">
+              <Card>
+              {this.renderGoogle()}
+              </Card>
+            </Col>
           </Row>
         </Container>
-
-
       </section>
     )
   }

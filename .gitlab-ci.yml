@@ -4,20 +4,6 @@ stages:
   - deploy
 
 
-deploy-development:
-  stage: deploy
-  only:
-    - development
-  script:
-    - npm install
-    - npm audit fix
-    - CI=false npm run build
-    - npm rebuild node-sass
-    - npm install -g firebase-tools
-    - firebase use high-magpie-176621 --token $FIREBASE_TOKEN
-    - firebase target:apply hosting development high-magpie-176621 --token $FIREBASE_TOKEN
-    - firebase deploy --only hosting:development --token $FIREBASE_TOKEN
-
 deploy-production:
   stage: deploy
   only:

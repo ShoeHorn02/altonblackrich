@@ -13,7 +13,6 @@ class App extends React.Component {
     // Remove `active` className from `.splash` element in `public/index.html`
     !document.querySelector(".splash") ||
       document.querySelector(".splash").classList.remove("active");
-      store.dispatch(loadUser());
   }
 
 
