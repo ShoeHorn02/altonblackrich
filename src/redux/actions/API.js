@@ -1,7 +1,7 @@
-let DEBUG = true;
-let HOST_URL = "https://iironroom.com/api/v1";
-let MEDIA_URL = "https://iironroom.com/media/";
-let WEB_SOCKET_URL = "wss://iironroom.com";
+let DEBUG = false;
+let HOST_URL = "https://backend.wordcounter.lol/api/v1";
+let MEDIA_URL = "https://backend.wordcounter.lol/media/";
+let WEB_SOCKET_URL = "wss://backend.wordcounter.lol";
 if (DEBUG) {
   HOST_URL = "http://localhost:8000/api/v1";
   MEDIA_URL = "http://localhost:8000/media/";

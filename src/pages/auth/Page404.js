@@ -11,9 +11,9 @@ const Page404 = () => (
       <p className="h2 font-weight-normal mt-3 mb-4">
         The page you are looking for might have been removed.
       </p>
-      <Link to="/dashboard">
+      <Link to="/">
         <Button color="primary" size="lg">
-          Return to website
+          Return to WordCounter
         </Button>
       </Link>
     </div>

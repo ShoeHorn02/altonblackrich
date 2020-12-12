@@ -1,5 +1,5 @@
 import React from "react";
-import Landing from "../landing/Landing";
+
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import Loader from "../../components/Loader"
@@ -36,13 +36,20 @@ class LandingMain extends React.Component {
       text: null,
       word_count: 0,
       charachter_count: 0,
+      channel: 1234,
     }
   }
 
   componentDidMount() {
       this.waitForSocketConnection();
+      this.getGeoInfo()
     }
 
+    getGeoInfo = async () => {
+      const publicIp = await require('public-ip');
+      const ipv4 = await publicIp.v4()
+      this.setState({channel: ipv4.replaceAll(".","")})
+    };
 
 
   waitForSocketConnection(callback) {
@@ -60,7 +67,7 @@ class LandingMain extends React.Component {
   }
 
   connect(chatUrl) {
-    const path = `${SOCKET_URL}/ws/notifications/wordcounter/`;
+    const path = `${SOCKET_URL}/ws/notifications/${this.state.channel}/`;
     console.log(path)
     this.socketRef = new WebSocket(path);
     //this.socketRef.close();
@@ -129,7 +136,6 @@ class LandingMain extends React.Component {
 
   socketNewMessage(data) {
     const parsedData = JSON.parse(data);
-    console.log(parsedData)
     this.setState({
       word_count: parsedData.words_count,
       charachter_count: parsedData.charachter_count
@@ -138,7 +144,6 @@ class LandingMain extends React.Component {
 
   handleChange = (content, delta, source, editor) => {
     const text = editor.getText(content);
-    console.log(text)
     this.setState({ text: text })
   }
 
@@ -208,7 +213,7 @@ class LandingMain extends React.Component {
             <Col md="7" className="mx-auto text-center">
               <h1 className="landing-intro-title my-4">The #1 app for word counting</h1>
 
-              <p className="landing-intro-subtitle">Count. Grow. Inspire. Change. Be A Words Smith. <br />Becasue Counting Words and Letters Are Awesome.</p>
+              <p className="landing-intro-subtitle">Write. Inspire. Change <br />Be A Wordsmith. A Person of letters</p>
 
 
 

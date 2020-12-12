@@ -781,62 +781,24 @@ const legalRoutes = {
 
 // Dashboard specific routes
 export const dashboard = [
-  dashboardRoutes,
-  layoutRoutes,
-  uiRoutes,
-  workoutCategory,
-  workoutCategoryDetail,
-  reportRoutes,
-  formRoutes,
-  tableRoutes,
-  iconRoutes,
-  calendarRoutes,
-  timelineRoutes,
-  mapRoutes,
-  pageRoutes,
-  workoutDetailRoutes,
-  albumDetailRoutes,
-  albumbPhotoDetailRoutes,
-  lift_trackingRoutes,
-  body_trackingRoutes,
-  exerciseRoutes,
-  notificationRoutes,
-  discoverRoutes,
-  followingRoutes,
-  albumbRoutes,
-  exerciseDetailRoutes,
-  documentationRoutes,
-  privateRoutes,
-  profileRoutes,
-  settingRoutes,
-  myWorkoutRoutes,
-  weight_trackingRoutes,
+
 ];
 
 // Landing specific routes
 export const landing = [
   landingRoutes,
-  legalRoutes,
+
 ];
 
 // Auth specific routes
-export const page = [authRoutes];
+export const page = [];
 
 // Onboard specific routes
-export const onboarding = [onboardRoutes];
+export const onboarding = [];
 
 
 
 // All routes
 export default [
-  lift_trackingRoutes,
-  weight_trackingRoutes,
-  timelineRoutes,
-  workoutCategory,
-  discoverRoutes,
-  dashboardRoutes,
-  myWorkoutRoutes,
-  albumbRoutes,
-  reportRoutes,
-  exerciseRoutes,
+
 ];
