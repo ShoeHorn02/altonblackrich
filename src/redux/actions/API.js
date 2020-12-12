@@ -1,4 +1,4 @@
-let DEBUG = true;
+let DEBUG = false;
 let HOST_URL = "https://backend.wordcounter.lol/api/v1";
 let MEDIA_URL = "https://backend.wordcounter.lol/media/";
 let WEB_SOCKET_URL = "wss://backend.wordcounter.lol";
