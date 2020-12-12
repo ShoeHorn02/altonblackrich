@@ -9,7 +9,6 @@ import {
   faFile,
   faFlask,
   faHeart,
-  faHome,
   faMapMarkerAlt,
   faTable,
   faSignInAlt,
@@ -86,7 +85,7 @@ import Step3 from "../pages/onboarding/Step3/Index";
 // Lift Tracking
 import LiftTracking from "../pages/lift_tracking/LiftTracking";
 
-import { API_WORKOUTS_CATEGORY_PUBLIC } from '../redux/actions/API'
+
 
 
 // Reports LiftHistory
@@ -118,8 +117,7 @@ const Changelog = async(() => import("../pages/docs/Changelog"));
 // Dashboards
 const Default = async(() => import("../pages/dashboards/Default"));
 
-// Timeline
-const Timeline = async(() => import("../pages/dashboards/Social"));
+
 
 // Forms
 const Layouts = async(() => import("../pages/forms/Layouts"));
@@ -150,31 +148,9 @@ const Calendar = async(() => import("../pages/calendar/Calendar"));
 const VectorMaps = async(() => import("../pages/maps/VectorMaps"));
 const GoogleMaps = async(() => import("../pages/maps/GoogleMaps"));
 
-// Routes
-const workout_category_list =[]
 
-async function apiGetWorkoutCategory () {
-   try {
-     const resp = await fetch(`${API_WORKOUTS_CATEGORY_PUBLIC}`)
 
-     const workoutCateogryJSON = await resp.json()
 
-     for (let i = 0; i < workoutCateogryJSON.length; i++) {
-       var newElement = {};
-       newElement['path'] = "/workouts/" + workoutCateogryJSON[i].category;
-       newElement['name'] = workoutCateogryJSON[i].category;
-       newElement['component'] = "WorkoutsList";
-       workout_category_list.push(newElement);
-     }
-
-     return workout_category_list
-
-   } catch (err) {
-        console.log(err)
-     }
-}
-
-const triggerWorkoutCategory = apiGetWorkoutCategory();
 
 const landingRoutes = {
   path: "/",
@@ -446,14 +422,7 @@ const followingRoutes = {
 
 
 
-const timelineRoutes = {
-  path: "/timeline",
-  name: "Timeline",
-  header: "Discover And Spotlight",
-  icon: faHome,
-  component: Timeline,
-  children: null
-};
+
 
 const mapRoutes = {
   path: "/maps",
@@ -550,12 +519,7 @@ const messagesRoutes = {
   component: MessagesMain,
 };
 
-const workoutCategory = {
-  path: "/workouts/",
-  name: "Workouts",
-  icon: faDumbbell,
-  children: workout_category_list
-};
+
 
 const exerciseDetailRoutes = {
   path: "/exercises/detail/:exerciseID",

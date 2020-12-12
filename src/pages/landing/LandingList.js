@@ -184,7 +184,7 @@ class LandingMain extends React.Component {
       <CardBody>
         <Row>
           <Col className="mt-0">
-            <CardTitle tag="h5">Charachter Count</CardTitle>
+            <CardTitle tag="h5">Character Count</CardTitle>
           </Col>
 
           <Col className="col-auto">
