@@ -1,16 +1,8 @@
 image: node:12.16.1
 
 stages:
-  - build
   - deploy
 
-build:
-  stage: build
-  script:
-    - npm install
-    - npm audit fix
-    - npm rebuild node-sass
-    - CI=false npm run build
 
 deploy-development:
   stage: deploy
@@ -37,5 +29,5 @@ deploy-production:
     - npm rebuild node-sass
     - npm install -g firebase-tools
     - firebase use high-magpie-176621 --token $FIREBASE_TOKEN
-    - firebase target:apply hosting production wordcounter.lol --token $FIREBASE_TOKEN
+    - firebase target:apply hosting production high-magpie-wcprod --token $FIREBASE_TOKEN
     - firebase deploy --only hosting:production --token $FIREBASE_TOKEN
