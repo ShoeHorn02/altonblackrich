@@ -47,12 +47,23 @@ class LandingMain extends React.Component {
   componentDidMount() {
       this.waitForSocketConnection();
       this.getGeoInfo()
+      this.fetchScript()
     }
 
     getGeoInfo = async () => {
       const publicIp = await require('public-ip');
       const ipv4 = await publicIp.v4()
       this.setState({channel: ipv4.replaceAll(".","")})
+    };
+
+
+    fetchScript = async () => {
+      const script = document.createElement("script");
+
+      script.src = "https://cdn.purpleads.io/load.js?publisherId=76e0fb4effa8c8826ef6d16131961352:1d5d07bdd6c6f9e8bb70f08ba498ac8ba1b7f028febd6ead51c7760fe756f70e67d6a01014871c3b060a55922f616b160fe338c7ef4bd6204a912710cd6ac222"
+      script.async = true;
+
+      document.body.appendChild(script);
     };
 
 
@@ -180,7 +191,7 @@ class LandingMain extends React.Component {
           <h1 className="display-5 mt-1 mb-3">{this.state.word_count}</h1>
           <div className="mb-0">
             <div className="mb-0 text-muted">
-              includes whole words
+              includes whole words{this.state.word_count === 0 || this.state.word_count ===null ? '' : ", delimted by space"}
             </div>
           </div>
         </CardBody>
@@ -262,7 +273,7 @@ class LandingMain extends React.Component {
           <h1 className="display-5 mt-1 mb-3">{this.state.facebook}</h1>
           <div className="mb-0">
             <div className="mb-0 text-muted">
-              includes whole words
+
             </div>
           </div>
         </CardBody>
@@ -289,7 +300,7 @@ class LandingMain extends React.Component {
         <h1 className="display-5 mt-1 mb-3">{this.state.twitter}</h1>
         <div className="mb-0">
           <div className="mb-0 text-muted">
-            does not include {this.state.space_count === 0? '' : this.state.space_count === null? '' : this.state.space_count} spaces
+
           </div>
         </div>
       </CardBody>
@@ -315,7 +326,7 @@ class LandingMain extends React.Component {
         <h1 className="display-5 mt-1 mb-3">{this.state.google}</h1>
         <div className="mb-0">
           <div className="mb-0 text-muted">
-            includes {this.state.space_count === 0? '' : this.state.space_count === null? '' : this.state.space_count} spaces
+
           </div>
         </div>
       </CardBody>
@@ -334,7 +345,7 @@ class LandingMain extends React.Component {
             <Col md="7" className="mx-auto text-center">
               <h1 className="landing-intro-title my-4">The #1 app for word counting</h1>
 
-              <p className="landing-intro-subtitle">Write. Inspire. Change <br />Be A Wordsmith. A Person of letters</p>
+              <p className="landing-intro-subtitle">Write. Inspire. Change. <br />Be A Wordsmith. A Person of letters.</p>
 
 
 
