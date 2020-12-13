@@ -61,6 +61,7 @@ class LandingMain extends React.Component {
       const script = document.createElement("script");
 
       script.src = "https://cdn.purpleads.io/load.js?publisherId=76e0fb4effa8c8826ef6d16131961352:1d5d07bdd6c6f9e8bb70f08ba498ac8ba1b7f028febd6ead51c7760fe756f70e67d6a01014871c3b060a55922f616b160fe338c7ef4bd6204a912710cd6ac222"
+      script.id ="purpleads-client"
       script.async = true;
 
       document.body.appendChild(script);
