@@ -14,6 +14,6 @@ deploy-production:
     - CI=false npm run build
     - npm rebuild node-sass
     - npm install -g firebase-tools
-    - firebase use high-magpie-176621 --token $FIREBASE_TOKEN
-    - firebase target:apply hosting production high-magpie-wcprod --token $FIREBASE_TOKEN
+    - firebase use fry2-demo --token $FIREBASE_TOKEN
+    - firebase target:apply hosting production fry2-demo --token $FIREBASE_TOKEN
     - firebase deploy --only hosting:production --token $FIREBASE_TOKEN

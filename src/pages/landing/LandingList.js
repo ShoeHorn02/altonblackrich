@@ -1,425 +1,156 @@
-import React from "react";
-
-import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
-import Loader from "../../components/Loader"
-import { SOCKET_URL } from '../../redux/actions/API'
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { connect, useDispatch } from "react-redux";
+import { enableModernTheme } from "../../redux/actions/themeActions";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import {
   Button,
-  CardHeader,
-  CardTitle,
-  Card,
+  Nav,
+  NavItem,
+  NavLink,
+  Navbar,
+  NavbarBrand,
   Col,
   Container,
   Row,
-  CardImg,
-  CardBody,
-  Media,
-  FormGroup,
-  Label,
-  Input,
-  CustomInput,
-  Form,
 } from "reactstrap";
-import ReactQuill from "react-quill";
-import { Book, BarChart2, Bold, Facebook,  Twitter, Pocket} from "react-feather";
+import lifterGirl from "./LifterGirl.jpg"
+AOS.init();
 
+class Body extends React.Component {
 
-class LandingMain extends React.Component {
-
-
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      socketState: null,
-      text: null,
-      word_count: 0,
-      charachter_count: 0,
-      charachter_count_no_space: 0,
-      channel: 1234,
-      facebook: "250/250",
-      twitter: "280/280",
-      google: "300/300"
-    }
-  }
-
-  componentDidMount() {
-      this.waitForSocketConnection();
-      this.getGeoInfo()
-      this.fetchScript()
-    }
-
-    getGeoInfo = async () => {
-      const publicIp = await require('public-ip');
-      const ipv4 = await publicIp.v4()
-      this.setState({channel: ipv4.replaceAll(".","")})
+  renderFooter = () => {
+    const mystyle = {
+      color: "gray",
     };
-
-
-    fetchScript = async () => {
-      const script = document.createElement("script");
-
-      script.src = "https://cdn.purpleads.io/load.js?publisherId=76e0fb4effa8c8826ef6d16131961352:1d5d07bdd6c6f9e8bb70f08ba498ac8ba1b7f028febd6ead51c7760fe756f70e67d6a01014871c3b060a55922f616b160fe338c7ef4bd6204a912710cd6ac222"
-      script.id ="purpleads-client"
-      script.async = true;
-
-      document.body.appendChild(script);
-    };
-
-
-  waitForSocketConnection(callback) {
-    const component = this;
-    setTimeout(function() {
-      if (component.state.socketState === 1) {
-        console.log("Connection is made");
-        //callback();
-        return;
-      } else {
-        console.log("wait for connection...");
-        component.connect();
-      }
-    }, 500);
-  }
-
-  connect(chatUrl) {
-    const path = `${SOCKET_URL}/ws/notifications/${this.state.channel}/`;
-    console.log(path)
-    this.socketRef = new WebSocket(path);
-    //this.socketRef.close();
-    if (this.socketRef.readyState === 1) {
-      return;
-    }
-    console.log(path)
-    this.socketRef.onopen = () => {
-      console.log('WebSocket open');
-      this.setState({
-        socketState: 1,
-      });
-    };
-    this.socketRef.onmessage = e => {
-      this.socketNewMessage(e.data);
-      //console.log(e.data)
-    };
-    this.socketRef.onerror = e => {
-      console.log(e.message);
-    };
-    this.socketRef.onclose = () => {
-      console.log("WebSocket closed let's reopen");
-      this.waitForSocketConnection();
-    };
-  }
-
-
-
-  componentWillUnmount() {
-    this.disconnect();
-  }
-
-
-  disconnect() {
-    try{this.socketRef.close()} catch(e) { console.error(e); }
-  }
-
-
-  sendMessage(data) {
-    try {
-      this.socketRef.send(JSON.stringify({ ...data }));
-    }
-    catch(err) {
-      console.log(err.message);
-    }
-  }
-
-
-  fetchMessages() {
-    this.sendMessage({
-      command: "count_text",
-      text: this.state.text
-    });
-  }
-
-
-  componentDidUpdate() {
-    if (this.state.socketState === 1 && this.state.text !== null) {
-      this.setState({
-        text: null,
-      });
-      this.fetchMessages();
-    }
-  }
-
-
-  socketNewMessage(data) {
-    const parsedData = JSON.parse(data);
-    this.setState({
-      word_count: parsedData.words_count,
-      charachter_count: parsedData.charachter_count,
-      space_count: parsedData.space_count,
-      charachter_count_no_space: parsedData.charachter_count_no_space,
-      facebook: parsedData.facebook,
-      google: parsedData.google,
-      twitter: parsedData.twitter,
-    })
-  }
-
-  handleChange = (content, delta, source, editor) => {
-    const text = editor.getText(content);
-    this.setState({
-      text: text,
-    })
-  }
-
-
-
-  renderWordCountCard = () => {
     return(
-      <Card>
-        <CardBody>
-          <Row>
-            <Col className="mt-0">
-              <CardTitle tag="h5">Word Count</CardTitle>
-            </Col>
+      <Nav className="d-flex p-2 justify-content-center text-wrap" style={{backgroundColor:'#0e0e13'}}>
 
-            <Col className="col-auto">
-              <div className="avatar">
-                <div className="avatar-title rounded-circle bg-primary-dark">
-                  <Book className="feather align-middle" />
-                </div>
-              </div>
-            </Col>
-          </Row>
-          <h1 className="display-5 mt-1 mb-3">{this.state.word_count}</h1>
-          <div className="mb-0">
-            <div className="mb-0 text-muted">
-              includes whole words{this.state.word_count === 0 || this.state.word_count ===null ? '' : ", delimted by space"}
-            </div>
-          </div>
-        </CardBody>
-      </Card>
+
+      <NavItem>
+
+        <NavLink
+        tag={Link}
+        to="/about"
+        style={mystyle}
+        >Home</NavLink>
+      </NavItem>
+
+
+
+      <NavItem>
+
+        <NavLink
+        tag={Link}
+        to="/about"
+        style={mystyle}
+        >About</NavLink>
+      </NavItem>
+
+
+
+        <NavItem>
+
+          <NavLink
+          tag={Link}
+          to="/copyright"
+          style={mystyle}
+          >Contact</NavLink>
+        </NavItem>
+
+
+        <NavItem>
+          <NavLink href="#" style={mystyle}>2021 AltonBlackRich Inc.</NavLink>
+        </NavItem>
+      </Nav>
     )
   }
 
-  renderLetterCountCard_Spaces = () => {
+  renderRight = () => {
     return(
-      <CardBody>
-        <Row>
-          <Col className="mt-0">
-            <CardTitle tag="h5">Character Count</CardTitle>
-          </Col>
+      <Col md="5" className="d-flex flex-column justify-content-center align-items-center" style={{backgroundColor:'#0e0e13'}}>
 
-          <Col className="col-auto">
-            <div className="avatar">
-              <div className="avatar-title rounded-circle bg-primary-dark">
-                <BarChart2 className="feather align-middle" />
-              </div>
-            </div>
-          </Col>
-        </Row>
-        <h1 className="display-5 mt-1 mb-3">{this.state.charachter_count}</h1>
-        <div className="mb-0">
-          <div className="mb-0 text-muted">
-            includes {this.state.space_count === 0? '' : this.state.space_count === null? '' : this.state.space_count} spaces
+
+
+
+        <div className="m-0 p-3 " style={{width:'75%'}}>
+
+
+          <div className="text-center">
+            <h1 className=" text-light mb-5" style={{fontSize:'31px'}}>Software. Evolved.</h1>
+            <h4 className=" text-light mt-3">
+            AltonBlackRich is a software firm with a unique focus on finance, health, and collaborative problem solving.
+            </h4>
           </div>
-        </div>
-      </CardBody>
-    )
-  }
 
-  renderLetterCountCard_NoSpaces = () => {
-    return(
-      <CardBody>
-        <Row>
-          <Col className="mt-0">
-            <CardTitle tag="h5">Letter Count</CardTitle>
-          </Col>
-
-          <Col className="col-auto">
-            <div className="avatar">
-              <div className="avatar-title rounded-circle bg-primary-dark">
-                <Bold className="feather align-middle" />
-              </div>
-            </div>
-          </Col>
-        </Row>
-        <h1 className="display-5 mt-1 mb-3">{this.state.charachter_count_no_space}</h1>
-        <div className="mb-0">
-          <div className="mb-0 text-muted">
-            does not include {this.state.space_count === 0? '' : this.state.space_count === null? '' : this.state.space_count} spaces
-          </div>
-        </div>
-      </CardBody>
-    )
-  }
-
-
-
-  renderFaceBook = () => {
-    return(
-      <Card>
-        <CardBody>
-          <Row>
-            <Col className="mt-0">
-              <CardTitle tag="h5">FaceBook</CardTitle>
-            </Col>
-
-            <Col className="col-auto">
-              <div className="avatar">
-                <div className="avatar-title rounded-circle bg-primary-dark">
-                  <Facebook className="feather align-middle" />
-                </div>
-              </div>
-            </Col>
-          </Row>
-          <h1 className="display-5 mt-1 mb-3">{this.state.facebook}</h1>
-          <div className="mb-0">
-            <div className="mb-0 text-muted">
-
-            </div>
-          </div>
-        </CardBody>
-      </Card>
-    )
-  }
-
-  renderTwitter = () => {
-    return(
-      <CardBody>
-        <Row>
-          <Col className="mt-0">
-            <CardTitle tag="h5">Twitter</CardTitle>
-          </Col>
-
-          <Col className="col-auto">
-            <div className="avatar">
-              <div className="avatar-title rounded-circle bg-primary-dark">
-                <Twitter className="feather align-middle" />
-              </div>
-            </div>
-          </Col>
-        </Row>
-        <h1 className="display-5 mt-1 mb-3">{this.state.twitter}</h1>
-        <div className="mb-0">
-          <div className="mb-0 text-muted">
 
           </div>
-        </div>
-      </CardBody>
+
+
+      </Col>
     )
   }
 
-  renderGoogle = () => {
+  renderLeft = () => {
     return(
-      <CardBody>
-        <Row>
-          <Col className="mt-0">
-            <CardTitle tag="h5">Google</CardTitle>
-          </Col>
+      <Col md="7" className="" style={{backgroundColor:'#d3e2f0', "backgroundImage": `url(${lifterGirl})`, objectFit: 'cover', backgroundSize: 'cover', backgroundRepeat:'no-repeat' }} >
 
-          <Col className="col-auto">
-            <div className="avatar">
-              <div className="avatar-title rounded-circle bg-primary-dark">
-                <Pocket className="feather align-middle" />
-              </div>
-            </div>
-          </Col>
-        </Row>
-        <h1 className="display-5 mt-1 mb-3">{this.state.google}</h1>
-        <div className="mb-0">
-          <div className="mb-0 text-muted">
 
-          </div>
-        </div>
-      </CardBody>
+        <Navbar   expand="sm" className="absolute-top w-100 m-0 p-3" style={{border:'none'}}>
+          <Container >
+            <NavbarBrand className="font-weight-bold text-white" href="/" style={{'fontSize':'28px'}}>
+               AltonBlackRich.
+            </NavbarBrand>
+          </Container>
+        </Navbar>
+
+
+        <section className="vh-100" style={{'display': 'flex', 'justifyContent': 'center', 'alignItems': 'center','height': '200px', }}>
+
+
+
+        </section>
+
+      </Col>
     )
   }
 
-
-
-
-
-  renderMain = () => {
+  render () {
     return(
-      <section className="landing-intro text-dark pt-5">
-        <Container>
-          <Row>
-            <Col md="7" className="mx-auto text-center">
-              <h1 className="landing-intro-title my-4">The #1 app for word counting</h1>
 
-              <p className="landing-intro-subtitle">Write. Inspire. Change. <br />Be A Wordsmith. A Person of letters.</p>
+    <div className="vh-100 bg-dark d-flex flex-column justify-content-end ">
+
+    <div className="m-0 p-0" style={{height: '100%', width: '100%', 'overflowX':'hidden', 'overflowY':'hidden'}}>
+    <Row className="min-vh-100 d-flex ">
+        {this.renderLeft()}
+    {this.renderRight()}
+
+    </Row>
+    </div>
 
 
 
+    {this.renderFooter()}
 
-            </Col>
-          </Row>
-          <Row>
-          <Col md="12">
-          <Card>
+    </div>
 
-            <CardBody >
-              <ReactQuill
-                placeholder="Type something and we will count"
-                onChange={this.handleChange}
-                />
-            </CardBody>
-          </Card>
-
-          </Col>
-          </Row>
-          <Row>
-            <Col sm="4">
-              {this.renderWordCountCard()}
-            </Col>
-            <Col sm="4">
-              <Card>
-              {this.renderLetterCountCard_Spaces()}
-              </Card>
-            </Col>
-            <Col sm="4">
-              <Card>
-              {this.renderLetterCountCard_NoSpaces()}
-              </Card>
-            </Col>
-          </Row>
-          <Row>
-            <Col sm="4">
-              {this.renderFaceBook()}
-            </Col>
-            <Col sm="4">
-              <Card>
-              {this.renderTwitter()}
-              </Card>
-            </Col>
-            <Col sm="4">
-              <Card>
-              {this.renderGoogle()}
-              </Card>
-            </Col>
-          </Row>
-        </Container>
-      </section>
     )
-  }
-
-
-
-
-
-  render() {
-    if (this.props.isLoading) {
-      return <Loader />;
-    }
-    return (
-      <div>
-        {this.renderMain()}
-      </div>
-    );
   }
 }
 
-const mapStateToProps = (state) => ({
-  isLoading: state.auth.isLoading,
-});
+const Landing = props => {
+  const dispatch = useDispatch();
 
-export default connect(mapStateToProps)(LandingMain);
+  useEffect(() => {
+    dispatch(enableModernTheme());
+  }, [dispatch]);
+
+  return (
+    <React.Fragment>
+      <Body />
+    </React.Fragment>
+  )
+}
+
+export default connect()(Landing);
