@@ -20,41 +20,44 @@ AOS.init();
 
 class Body extends React.Component {
 
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      path: null
+    };
+  }
+
   renderFooter = () => {
     const mystyle = {
       color: "gray",
+      cursor: "pointer"
     };
     return(
       <Nav className="d-flex p-2 justify-content-center text-wrap" style={{backgroundColor:'#0e0e13'}}>
 
 
-      <NavItem>
+      <NavItem onClick={()=> this.setState({path:null}) }>
 
         <NavLink
-        tag={Link}
-        to="/about"
         style={mystyle}
         >Home</NavLink>
       </NavItem>
 
 
 
-      <NavItem>
+      <NavItem onClick={()=> this.setState({path:"about"}) }>
 
         <NavLink
-        tag={Link}
-        to="/about"
         style={mystyle}
         >About</NavLink>
       </NavItem>
 
 
 
-        <NavItem>
+        <NavItem onClick={()=> this.setState({path:"contact"}) }>
 
           <NavLink
-          tag={Link}
-          to="/copyright"
           style={mystyle}
           >Contact</NavLink>
         </NavItem>
@@ -77,12 +80,44 @@ class Body extends React.Component {
         <div className="m-0 p-3 " style={{width:'75%'}}>
 
 
+        {this.state.path==="home" || this.state.path===null?
+
           <div className="text-center">
             <h1 className=" text-light mb-5" style={{fontSize:'31px'}}>Software. Evolved.</h1>
             <h4 className=" text-light mt-3">
-            AltonBlackRich is a software firm with a unique focus on finance, health, and collaborative problem solving.
+            AltonBlackRich is a software firm with a unique focus on finance, sports, and collaborative problem solving.
             </h4>
           </div>
+
+          :
+
+
+
+
+        this.state.path==="about"?
+
+        <div className="text-center">
+          <h1 className=" text-light mb-5" style={{fontSize:'31px'}}>Our Philosophy Is Simple</h1>
+          <h4 className=" text-light mt-3">
+          Be collaborative. Be curious. Be yourself, And Keep Growing.
+          </h4>
+        </div>
+
+        :
+
+          this.state.path==="contact"?
+
+          <div className="text-center">
+            <h1 className=" text-light mb-5" style={{fontSize:'31px'}}></h1>
+            <h4 className=" text-light mt-3">
+            175 Lynden Road, Brantford ON N3R 8A7, Canada
+            </h4>
+          </div>
+
+          :
+
+          null
+        }
 
 
           </div>

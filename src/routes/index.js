@@ -734,9 +734,9 @@ const profileRoutes = {
   ]
 };
 
-const legalRoutes = {
-  path: "/legal",
-  name: "Legal",
+const aboutRoutes = {
+  path: "/about",
+  name: "About",
   component: Legal,
   children: null
 };
