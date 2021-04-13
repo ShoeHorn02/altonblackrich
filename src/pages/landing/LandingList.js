@@ -135,7 +135,7 @@ class Body extends React.Component {
         <Navbar   expand="sm" className="absolute-top w-100 m-0 p-3" style={{border:'none'}}>
           <Container >
             <NavbarBrand className="font-weight-bold text-white" href="/" style={{'fontSize':'28px'}}>
-               AltonBlackRich.
+               AltonBlackRich Inc.
             </NavbarBrand>
           </Container>
         </Navbar>
