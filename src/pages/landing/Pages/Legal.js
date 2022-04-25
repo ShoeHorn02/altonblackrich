@@ -111,7 +111,7 @@ class LandingMain extends React.Component {
 
 
 
-  renderIntro = () => {
+  renderHeader = () => {
     return(
       <Row className="align-items-center" >
 
@@ -131,27 +131,27 @@ class LandingMain extends React.Component {
   }
 
 
-  renderIntro2 = () => {
+  renderTerms = () => {
     return(
       <Row className="align-items-center">
 
         <Col md="12">
 
           <h1 class="display-4 mb-2">
-            Ironroom Privacy & Terms Overview
+            Timer Privacy & Terms Overview
           </h1>
 
           <p class="font-size-lg mb-md-2">
-            Updated 3/15/2019
+
           </p>
 
           <p class="font-size-lg mb-md-2">
-          Thank you for using Ironroom!
+          Thank you for using Timers
           </p>
 
 
           <p class="font-size-lg mb-md-2">
-          Below you will find the full Terms of Service, Privacy Notice, Cookie Policy, Security Overview and Acceptable Use Policy for the Overleaf services. If you have any questions, please get in touch.
+          This app does not guarntee anything. Do not use this app for any accuracy. We do not
           </p>
 
 
@@ -167,18 +167,15 @@ class LandingMain extends React.Component {
   }
 
   render() {
-    if (this.props.isAuthenticated) {
-      return <Redirect to="/dashboard" />;
-    }
     return (
       <div >
-      <Header />
-      <section className="landing-intro mt-5 pt-5 bg-light vh-150 pb-5 text-dark" style={{overflow:'hidden'}}>
-      <Container>
-        {this.renderIntro()}
-        {this.renderIntro2()}
 
-          <TabsWithTextLabel name="Default" className="tab-light" />
+      <section className="landing-intro mt-5 pt-5 bg-light vh-100 pb-5 text-dark" style={{overflow:'hidden'}}>
+      <Container>
+        {this.renderHeader()}
+        {this.renderTerms()}
+
+
 
       </Container>
       </section>

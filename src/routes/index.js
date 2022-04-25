@@ -156,7 +156,15 @@ const landingRoutes = {
   path: "/",
   name: "Landing Page",
   component: Landing,
-  children: null
+  children: null,
+};
+
+
+const termsRoutes = {
+  path: "/terms",
+  name: "Landing Page",
+  component: Legal,
+  children: null,
 };
 
 const dashboardRoutes = {
@@ -751,7 +759,7 @@ export const dashboard = [
 // Landing specific routes
 export const landing = [
   landingRoutes,
-
+  termsRoutes,
 ];
 
 // Auth specific routes
