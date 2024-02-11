@@ -22,6 +22,8 @@ import { faCalendarAlt } from "@fortawesome/free-regular-svg-icons";
 // Landing
 import Landing from "../pages/landing/LandingList";
 import Legal from "../pages/landing/Pages/Legal";
+import LegalHydration from "../pages/landing/Pages/LegalHydration";
+import LegalTimer from "../pages/landing/Pages/LegalTimer";
 
 
 // Auth
@@ -750,6 +752,21 @@ const aboutRoutes = {
 };
 
 
+const privacyHydrationRoutes = {
+  path: "/hydration/privacy",
+  name: "Hydration",
+  component: LegalHydration,
+  children: null
+};
+
+const privacyTimerRoutes = {
+  path: "/timer/privacy",
+  name: "Timer",
+  component: LegalTimer,
+  children: null
+};
+
+
 
 // Dashboard specific routes
 export const dashboard = [
@@ -758,6 +775,8 @@ export const dashboard = [
 
 // Landing specific routes
 export const landing = [
+  privacyHydrationRoutes,
+  privacyTimerRoutes,
   landingRoutes,
   termsRoutes,
 ];
@@ -772,5 +791,4 @@ export const onboarding = [];
 
 // All routes
 export default [
-
 ];
