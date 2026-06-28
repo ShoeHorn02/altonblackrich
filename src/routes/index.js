@@ -3,6 +3,7 @@ import Landing from "../pages/landing/LandingList";
 import Legal from "../pages/landing/Pages/Legal";
 import LegalHydration from "../pages/landing/Pages/LegalHydration";
 import LegalTimer from "../pages/landing/Pages/LegalTimer";
+import Guidance from "../pages/misc/Guidance";
 
 
 
@@ -43,6 +44,13 @@ const privacyTimerRoutes = {
   children: null
 };
 
+const guidanceRoutes = {
+  path: "/guidance",
+  name: "Guidance",
+  component: Guidance,
+  children: null
+};
+
 
 
 // Dashboard specific routes
@@ -52,6 +60,7 @@ export const dashboard = [
 
 // Landing specific routes
 export const landing = [
+  guidanceRoutes,
   privacyHydrationRoutes,
   privacyTimerRoutes,
   landingRoutes,
