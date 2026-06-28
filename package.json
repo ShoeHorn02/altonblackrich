@@ -6,11 +6,11 @@
   "author": "Paul Laros <support@bootlab.io>",
   "private": true,
   "scripts": {
-    "sass:compile": "sass --watch src/assets/scss:public/css",
-    "build:css": "sass src/assets/scss:public/css",
-    "build:js": "react-scripts build",
+    "sass:compile": "sass --load-path=./node_modules --watch src/assets/scss:public/css",
+    "build:css": "sass --load-path=./node_modules src/assets/scss:public/css",
+    "build:js": "NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
     "watch:css": "chokidar \"src/assets/scss/**/*\" -c \"npm run build:css\"",
-    "watch:js": "react-scripts start",
+    "watch:js": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
     "start": "npm-run-all -p build:css watch:*",
     "build": "npm-run-all -p build:*"
   },
