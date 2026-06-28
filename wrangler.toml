@@ -1,0 +1,19 @@
+name = "altonblackrich"
+type = "javascript"
+account_id = "cb83123b84c48428482bb312fd50632d"
+workers_dev = false
+
+[env.production]
+routes = [
+  { pattern = "altonblackrich.com", zone_name = "altonblackrich.com" }
+]
+
+[build]
+command = "npm run build"
+cwd = "."
+watch_paths = ["src/**/*.js", "src/**/*.jsx", "src/**/*.scss", "src/**/*.css"]
+
+[build.upload]
+format = "service-worker"
+
+[docs]
