@@ -1,7 +1,7 @@
 import React from "react";
 import { loginFlag } from '../../redux/actions/auth';
 import store from "../../redux/store/index";
-import { Redirect, Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import {
   Card,
   CardBody,
@@ -23,7 +23,7 @@ import ProfilePhoto from '../../components/Social/ProfilePhoto/ProfilePhoto'
 import { MoreVertical, RefreshCw } from "react-feather";
 
 import BootstrapTable from "react-bootstrap-table-next";
-import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit";
+import { Search } from "react-bootstrap-table2-toolkit";
 import paginationFactory from "react-bootstrap-table2-paginator";
 import avatar1 from "../../assets/img/avatars/avatar.jpg";
 import avatar2 from "../../assets/img/avatars/avatar-2.jpg";
@@ -43,7 +43,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 
-const { SearchBar } = Search;
 
 
 

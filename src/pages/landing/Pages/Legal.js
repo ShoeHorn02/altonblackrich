@@ -36,12 +36,11 @@ class TabsWithTextLabel extends React.Component {
   }
 
   render() {
-    const { name, className } = this.props;
 
     return (
-      <div className={"tab " + className, "text-dark", "mt-4", "vh-100"}  style={{'box-shadow':'0px 0px'}}>
+      <div className="tab text-dark mt-4 vh-100" style={{'box-shadow':'0px 0px'}}>
         <Nav tabs className="p-0 m-0 " style={{'box-shadow':'0px 0px'}}>
-          <NavItem className>
+          <NavItem>
             <NavLink
               className={classnames({ active: this.state.activeTab === "1"})}
               style={this.state.activeTab === "1" ? {backgroundColor:'bg-light'} : null}

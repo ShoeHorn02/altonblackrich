@@ -18,7 +18,6 @@ import { postPhotoToAlbum } from '../../../redux/actions/album';
 
 async function UpdatePhotoToAlbum(userid, albumid, photo, handlerLoaderFlag, handlerUploadCount, count) {
   await handlerLoaderFlag(1)
-  const a = 0
   photo.map(
     async (x,y) => {
       const result = await store.dispatch(postPhotoToAlbum(userid, albumid, x))

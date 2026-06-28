@@ -76,20 +76,17 @@ class TimelineLazy extends React.Component {
       });
     }
 
-    const initial = await
       this.setState({
         api_timeline: this.state["api_timeline1"],
       });
 
 
     for (i = 2; i < this.state.lazy_page_number+1; i++) {
-      const append = await
       this.setState({
         api_timeline: this.state.api_timeline.concat(this.state["api_timeline"+i]),
       });
     }
 
-    const final = await
       this.setState({
         flag_comment_spinnter: 2,
         flag_like_spinner: 2,
@@ -121,14 +118,12 @@ class TimelineLazy extends React.Component {
         });
       });
     }
-      const initial = await
       this.setState({
         api_timeline: this.state["api_timeline1"],
       });
 
 
     for (i = 2; i < this.state.lazy_page_number+1; i++) {
-      const append = await
       this.setState({
         api_timeline: this.state.api_timeline.concat(this.state["api_timeline"+i]),
       });

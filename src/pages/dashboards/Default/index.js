@@ -37,7 +37,7 @@ import {
 
 import axios from "axios";
 import { keyConfig } from '../../../redux/actions/auth';
-import { loadUser, loginFlag } from '../../../redux/actions/auth';
+import { loadUser } from '../../../redux/actions/auth';
 
 import BootstrapTable from "react-bootstrap-table-next";
 import paginationFactory from "react-bootstrap-table2-paginator";

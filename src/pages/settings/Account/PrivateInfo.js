@@ -2,15 +2,11 @@ import React from "react";
 
 
 import {
-  Breadcrumb,
-  BreadcrumbItem,
   Button,
   Card,
   CardBody,
   CardHeader,
   CardTitle,
-  Col,
-  Container,
   DropdownItem,
   DropdownMenu,
   DropdownToggle,
@@ -18,9 +14,6 @@ import {
   FormGroup,
   Input,
   Label,
-  ListGroup,
-  ListGroupItem,
-  Row,
   UncontrolledDropdown
 } from "reactstrap";
 
@@ -29,32 +22,6 @@ import {
 
 import { MoreVertical, RefreshCw } from "react-feather";
 import { connect } from 'react-redux';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUpload } from "@fortawesome/free-solid-svg-icons";
-
-import avatar1 from "../../../assets/img/avatars/avatar.jpg";
-
-import store from "../../../redux/store/index";
-import Loader from "../../../components/Loader";
-
-import PublicInfo from './PublicInfo'
-import PrivateInfo from './PrivateInfo'
-
-import Header from "../../../components/Header";
-import HeaderTitle from "../../../components/HeaderTitle";
-import User from "../../../components/Social/UserCard/User";
-import { Link } from "react-router-dom";
-import FollowingInit from "../../../components/Social/FollowingFeed/FollowingInit";
-import {
-  API_TIMELINE_ALL_USER,
-  API_USER_PROFILES_FILTER,
-  API_USER_FOLLOWING_MASTER_FILTER_OPEN,
-  API_USER_FOLLOWING,
-  API_USER_FOLLOWERS,
-} from '../../../redux/actions/API';
-import axios from "axios";
-import { keyConfig } from '../../../redux/actions/auth';
-import { loadUser } from '../../../redux/actions/auth';
 
 
 class Default extends React.Component {

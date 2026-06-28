@@ -5,7 +5,7 @@ import {
   CardBody,
   Form,
 } from "reactstrap";
-import {postProfileHeading, userFirstLastName } from '../../../redux/actions/social';
+import {userFirstLastName } from '../../../redux/actions/social';
 import { connect } from 'react-redux';
 import store from "../../../redux/store/index";
 import FirstNameLastName from '../../../components/Social/UserInfo/FirstNameLastName'

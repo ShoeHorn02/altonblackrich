@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 
-import { Card, CardBody, CardHeader, CardTitle, Badge, CardSubtitle, Button } from "reactstrap";
+import { Card, CardBody, CardHeader, CardTitle, Badge, Button } from "reactstrap";
 import BootstrapTable from "react-bootstrap-table-next";
 
 const NextWorkoutTable = ({ theme, ...props }) => {

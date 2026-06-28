@@ -2,7 +2,7 @@ import React from "react";
 import Chart from "react-apexcharts";
 import { connect } from "react-redux";
 
-import { Card, CardBody, CardHeader, CardTitle } from "reactstrap";
+import { Card, CardBody } from "reactstrap";
 
 const AreaChart = ({ theme, ...props  }) => {
   const data = [

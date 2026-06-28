@@ -88,14 +88,12 @@ class TimelineLazy extends React.Component {
       });
     }
 
-      const initial = await
       this.setState({
         api_discover_profiles: this.state["api_discover_profiles1"],
       });
 
 
     for (i = 2; i < this.state.lazy_page_number+1; i++) {
-      const append = await
       this.setState({
         api_discover_profiles: this.state.api_discover_profiles.concat(this.state["api_discover_profiles"+i]),
       });
