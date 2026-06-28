@@ -1,13 +1,6 @@
 import {
   USER_LOADING,
   USER_LOADED,
-  AUTH_ERROR,
-  REGISTER_SUCCESS, // added
-  REGISTER_FAIL, // added
-  LOGIN_SUCCESS,
-  LOGIN_FAIL,
-  LOGOUT_SUCCESS,
-  LOGIN_FLAG,
 } from '../actions/types';
 
 const initialState = {
