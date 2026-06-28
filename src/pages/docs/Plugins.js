@@ -64,7 +64,6 @@ const Plugins = () => (
                       <a
                         href="https://getbootstrap.com/"
                         target="_blank" rel="noopener noreferrer"
-                        rel="noopener noreferrer"
                       >
                         https://getbootstrap.com/
                       </a>
@@ -76,7 +75,6 @@ const Plugins = () => (
                       <a
                         href="https://reactjs.org/"
                         target="_blank" rel="noopener noreferrer"
-                        rel="noopener noreferrer"
                       >
                         https://reactjs.org/
                       </a>
@@ -88,7 +86,6 @@ const Plugins = () => (
                       <a
                         href="https://redux.js.org/"
                         target="_blank" rel="noopener noreferrer"
-                        rel="noopener noreferrer"
                       >
                         https://redux.js.org/
                       </a>
@@ -100,7 +97,6 @@ const Plugins = () => (
                       <a
                         href="https://reactstrap.github.io/"
                         target="_blank" rel="noopener noreferrer"
-                        rel="noopener noreferrer"
                       >
                         https://reactstrap.github.io/
                       </a>
@@ -112,7 +108,6 @@ const Plugins = () => (
                       <a
                         href="https://jquery.com/"
                         target="_blank" rel="noopener noreferrer"
-                        rel="noopener noreferrer"
                       >
                         https://jquery.com/
                       </a>
@@ -124,7 +119,6 @@ const Plugins = () => (
                       <a
                         href="https://www.chartjs.org/"
                         target="_blank" rel="noopener noreferrer"
-                        rel="noopener noreferrer"
                       >
                         https://www.chartjs.org/
                       </a>
@@ -136,7 +130,6 @@ const Plugins = () => (
                       <a
                         href="https://apexcharts.com/"
                         target="_blank" rel="noopener noreferrer"
-                        rel="noopener noreferrer"
                       >
                         https://apexcharts.com/
                       </a>
@@ -148,7 +141,6 @@ const Plugins = () => (
                       <a
                         href="https://quilljs.com/"
                         target="_blank" rel="noopener noreferrer"
-                        rel="noopener noreferrer"
                       >
                         https://quilljs.com/
                       </a>
@@ -160,7 +152,6 @@ const Plugins = () => (
                       <a
                         href="https://developers.google.com/maps/documentation/"
                         target="_blank" rel="noopener noreferrer"
-                        rel="noopener noreferrer"
                       >
                         https://developers.google.com/maps/documentation/
                       </a>
@@ -172,7 +163,6 @@ const Plugins = () => (
                       <a
                         href="https://bevacqua.github.io/dragula/"
                         target="_blank" rel="noopener noreferrer"
-                        rel="noopener noreferrer"
                       >
                         https://bevacqua.github.io/dragula/
                       </a>
@@ -184,7 +174,6 @@ const Plugins = () => (
                       <a
                         href="https://feathericons.com/"
                         target="_blank" rel="noopener noreferrer"
-                        rel="noopener noreferrer"
                       >
                         https://feathericons.com/
                       </a>
@@ -196,7 +185,6 @@ const Plugins = () => (
                       <a
                         href="https://fontawesome.com/"
                         target="_blank" rel="noopener noreferrer"
-                        rel="noopener noreferrer"
                       >
                         https://fontawesome.com/
                       </a>
@@ -208,7 +196,6 @@ const Plugins = () => (
                       <a
                         href="https://fullcalendar.io/"
                         target="_blank" rel="noopener noreferrer"
-                        rel="noopener noreferrer"
                       >
                         https://fullcalendar.io/
                       </a>
@@ -220,7 +207,6 @@ const Plugins = () => (
                       <a
                         href="http://jvectormap.com/ "
                         target="_blank" rel="noopener noreferrer"
-                        rel="noopener noreferrer"
                       >
                         http://jvectormap.com/
                       </a>
@@ -232,7 +218,6 @@ const Plugins = () => (
                       <a
                         href="https://github.com/mdbootstrap/perfect-scrollbar"
                         target="_blank" rel="noopener noreferrer"
-                        rel="noopener noreferrer"
                       >
                         https://github.com/mdbootstrap/perfect-scrollbar
                       </a>
@@ -244,7 +229,6 @@ const Plugins = () => (
                       <a
                         href="https://github.com/diegoddox/react-redux-toastr"
                         target="_blank" rel="noopener noreferrer"
-                        rel="noopener noreferrer"
                       >
                         https://github.com/diegoddox/react-redux-toastr
                       </a>
@@ -256,7 +240,6 @@ const Plugins = () => (
                       <a
                         href="https://github.com/react-bootstrap-table/react-bootstrap-table2"
                         target="_blank" rel="noopener noreferrer"
-                        rel="noopener noreferrer"
                       >
                         https://github.com/react-bootstrap-table/react-bootstrap-table2
                       </a>
@@ -268,7 +251,6 @@ const Plugins = () => (
                       <a
                         href="https://github.com/sanniassin/react-input-mask"
                         target="_blank" rel="noopener noreferrer"
-                        rel="noopener noreferrer"
                       >
                         https://github.com/sanniassin/react-input-mask
                       </a>

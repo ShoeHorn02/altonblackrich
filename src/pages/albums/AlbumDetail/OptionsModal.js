@@ -2,10 +2,6 @@ import React, { useState }  from "react";
 import { toastr } from "react-redux-toastr";
 import {
   Button,
-  Card,
-  CardBody,
-  CardHeader,
-  CardTitle,
   Modal,
   ModalBody,
   ModalFooter,
@@ -19,12 +15,10 @@ import {
   PopoverHeader,
   Badge
 } from "reactstrap";
-import { deleteUser } from '../../../redux/actions/social';
-import { logout } from "../../../redux/actions/auth";
 import { connect } from 'react-redux';
 import store from "../../../redux/store/index";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMinus, faEyeSlash, faEye, faWrench, faInfo } from "@fortawesome/free-solid-svg-icons";
+import { faWrench, faInfo } from "@fortawesome/free-solid-svg-icons";
 import { deleteAlbumName, updateAlbumName } from '../../../redux/actions/album';
 
 async function DeleteAlbum(userid, album_name, changeflag) {
@@ -43,7 +37,6 @@ async function DeleteAlbum(userid, album_name, changeflag) {
 
 const ModalOptions = (props) => {
   const {
-    buttonLabel,
     className
   } = props;
 
@@ -56,10 +49,6 @@ const ModalOptions = (props) => {
     setNestedModal(!nestedModal);
     setCloseAll(false);
   }
-  const toggleAll = () => {
-    setNestedModal(!nestedModal);
-    setCloseAll(true);
-  }
 
 
   const [popoverOpen1, setPopoverOpen1] = useState(false);
@@ -70,7 +59,7 @@ const ModalOptions = (props) => {
 
   const savealbum = async () => {
      await setModal(!modal);
-     await props.showToastr("Saving Options","Updating " + '"' + props.api_album.album_name + '"',"success")
+     await props.showToastr("Saving Options","Updating \"" + props.api_album.album_name + "\""," success")
      await setTimeout(async () => {
        await props.onSave()
      }, 1500);
@@ -82,7 +71,7 @@ const ModalOptions = (props) => {
   const deletealbum = async () => {
      await setNestedModal(!nestedModal);
      await setCloseAll(false);
-     await props.showToastr("Deleting Photo Album","Deleteing " + '"' + props.api_album.album_name + '"',"error")
+     await props.showToastr("Deleting Photo Album","Deleteing \"" + props.api_album.album_name + "\""," error")
      await setTimeout(async () => {
        await props.onDelete()
      }, 1500);

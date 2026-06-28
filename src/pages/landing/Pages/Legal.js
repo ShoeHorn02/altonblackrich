@@ -1,13 +1,6 @@
 import React from "react";
 import classnames from "classnames";
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
-import Terms from './Terms'
-import Cookie from './Cookie'
-import Security from './Security'
-import Privacy from './Privacy'
-import Header from '../Header'
-import Footer from '../Footer'
 import { Container, Row, Col,
 
   Nav,

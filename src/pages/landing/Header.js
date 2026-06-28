@@ -3,11 +3,6 @@ import { Link } from "react-router-dom";
 
 import {
   Button,
-  Card,
-  CardImg,
-  CardText,
-  CardBody,
-  CardHeader,
   Nav,
   NavItem,
   NavLink,
