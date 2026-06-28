@@ -30,7 +30,7 @@ const Header = () => (
       <Nav className="ml-auto" navbar>
 
         <NavItem>
-          <NavLink href="../www.utopily.com" target="_blank" active className="text-light">
+          <NavLink href="../www.utopily.com" target="_blank" rel="noopener noreferrer" active className="text-light">
             Read Blog
           </NavLink>
         </NavItem>

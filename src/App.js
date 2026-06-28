@@ -1,8 +1,6 @@
 import React from "react";
 import ReduxToastr from "react-redux-toastr";
-import store from "./redux/store/index";
 import Routes from "./routes/Routes";
-import { loadUser } from './redux/actions/auth';
 import { connect } from "react-redux";
 
 

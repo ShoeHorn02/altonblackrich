@@ -63,7 +63,7 @@ const Plugins = () => (
                     <td>
                       <a
                         href="https://getbootstrap.com/"
-                        target="_blank"
+                        target="_blank" rel="noopener noreferrer"
                         rel="noopener noreferrer"
                       >
                         https://getbootstrap.com/
@@ -75,7 +75,7 @@ const Plugins = () => (
                     <td>
                       <a
                         href="https://reactjs.org/"
-                        target="_blank"
+                        target="_blank" rel="noopener noreferrer"
                         rel="noopener noreferrer"
                       >
                         https://reactjs.org/
@@ -87,7 +87,7 @@ const Plugins = () => (
                     <td>
                       <a
                         href="https://redux.js.org/"
-                        target="_blank"
+                        target="_blank" rel="noopener noreferrer"
                         rel="noopener noreferrer"
                       >
                         https://redux.js.org/
@@ -99,7 +99,7 @@ const Plugins = () => (
                     <td>
                       <a
                         href="https://reactstrap.github.io/"
-                        target="_blank"
+                        target="_blank" rel="noopener noreferrer"
                         rel="noopener noreferrer"
                       >
                         https://reactstrap.github.io/
@@ -111,7 +111,7 @@ const Plugins = () => (
                     <td>
                       <a
                         href="https://jquery.com/"
-                        target="_blank"
+                        target="_blank" rel="noopener noreferrer"
                         rel="noopener noreferrer"
                       >
                         https://jquery.com/
@@ -123,7 +123,7 @@ const Plugins = () => (
                     <td>
                       <a
                         href="https://www.chartjs.org/"
-                        target="_blank"
+                        target="_blank" rel="noopener noreferrer"
                         rel="noopener noreferrer"
                       >
                         https://www.chartjs.org/
@@ -135,7 +135,7 @@ const Plugins = () => (
                     <td>
                       <a
                         href="https://apexcharts.com/"
-                        target="_blank"
+                        target="_blank" rel="noopener noreferrer"
                         rel="noopener noreferrer"
                       >
                         https://apexcharts.com/
@@ -147,7 +147,7 @@ const Plugins = () => (
                     <td>
                       <a
                         href="https://quilljs.com/"
-                        target="_blank"
+                        target="_blank" rel="noopener noreferrer"
                         rel="noopener noreferrer"
                       >
                         https://quilljs.com/
@@ -159,7 +159,7 @@ const Plugins = () => (
                     <td>
                       <a
                         href="https://developers.google.com/maps/documentation/"
-                        target="_blank"
+                        target="_blank" rel="noopener noreferrer"
                         rel="noopener noreferrer"
                       >
                         https://developers.google.com/maps/documentation/
@@ -171,7 +171,7 @@ const Plugins = () => (
                     <td>
                       <a
                         href="https://bevacqua.github.io/dragula/"
-                        target="_blank"
+                        target="_blank" rel="noopener noreferrer"
                         rel="noopener noreferrer"
                       >
                         https://bevacqua.github.io/dragula/
@@ -183,7 +183,7 @@ const Plugins = () => (
                     <td>
                       <a
                         href="https://feathericons.com/"
-                        target="_blank"
+                        target="_blank" rel="noopener noreferrer"
                         rel="noopener noreferrer"
                       >
                         https://feathericons.com/
@@ -195,7 +195,7 @@ const Plugins = () => (
                     <td>
                       <a
                         href="https://fontawesome.com/"
-                        target="_blank"
+                        target="_blank" rel="noopener noreferrer"
                         rel="noopener noreferrer"
                       >
                         https://fontawesome.com/
@@ -207,7 +207,7 @@ const Plugins = () => (
                     <td>
                       <a
                         href="https://fullcalendar.io/"
-                        target="_blank"
+                        target="_blank" rel="noopener noreferrer"
                         rel="noopener noreferrer"
                       >
                         https://fullcalendar.io/
@@ -219,7 +219,7 @@ const Plugins = () => (
                     <td>
                       <a
                         href="http://jvectormap.com/ "
-                        target="_blank"
+                        target="_blank" rel="noopener noreferrer"
                         rel="noopener noreferrer"
                       >
                         http://jvectormap.com/
@@ -231,7 +231,7 @@ const Plugins = () => (
                     <td>
                       <a
                         href="https://github.com/mdbootstrap/perfect-scrollbar"
-                        target="_blank"
+                        target="_blank" rel="noopener noreferrer"
                         rel="noopener noreferrer"
                       >
                         https://github.com/mdbootstrap/perfect-scrollbar
@@ -243,7 +243,7 @@ const Plugins = () => (
                     <td>
                       <a
                         href="https://github.com/diegoddox/react-redux-toastr"
-                        target="_blank"
+                        target="_blank" rel="noopener noreferrer"
                         rel="noopener noreferrer"
                       >
                         https://github.com/diegoddox/react-redux-toastr
@@ -255,7 +255,7 @@ const Plugins = () => (
                     <td>
                       <a
                         href="https://github.com/react-bootstrap-table/react-bootstrap-table2"
-                        target="_blank"
+                        target="_blank" rel="noopener noreferrer"
                         rel="noopener noreferrer"
                       >
                         https://github.com/react-bootstrap-table/react-bootstrap-table2
@@ -267,7 +267,7 @@ const Plugins = () => (
                     <td>
                       <a
                         href="https://github.com/sanniassin/react-input-mask"
-                        target="_blank"
+                        target="_blank" rel="noopener noreferrer"
                         rel="noopener noreferrer"
                       >
                         https://github.com/sanniassin/react-input-mask

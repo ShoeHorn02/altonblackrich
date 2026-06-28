@@ -32,17 +32,17 @@ const Footer = () => (
                           {item.social &&
                               <ul className="list-inline">
                                 <li className="list-inline-item">
-                                    <a href="www.google.com" target="_blank" title="Twitter" className="text-muted text-hover-primary">
+                                    <a href="www.google.com" target="_blank" rel="noopener noreferrer" title="Twitter" className="text-muted text-hover-primary">
                                         <FontAwesomeIcon icon={faTwitter} className="align-middle float-left" />
                                     </a>
                                 </li>
                                 <li className="list-inline-item">
-                                    <a href="www.google.com" target="_blank" title="Facebook" className="text-muted text-hover-primary">
+                                    <a href="www.google.com" target="_blank" rel="noopener noreferrer" title="Facebook" className="text-muted text-hover-primary">
                                         <FontAwesomeIcon icon={faFacebook} className="align-middle float-left" />
                                     </a>
                                 </li>
                                 <li className="list-inline-item">
-                                    <a href="www.google.com" target="_blank" title="Instagram" className="text-muted text-hover-primary">
+                                    <a href="www.google.com" target="_blank" rel="noopener noreferrer" title="Instagram" className="text-muted text-hover-primary">
                                         <FontAwesomeIcon icon={faInstagram} className="align-middle float-left" />
                                     </a>
                                 </li>
