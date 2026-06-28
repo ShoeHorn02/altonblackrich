@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { connect, useDispatch } from "react-redux";
 import { enableModernTheme } from "../../redux/actions/themeActions";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import {
-  Button,
   Nav,
   NavItem,
   NavLink,
@@ -108,7 +106,6 @@ class Body extends React.Component {
           this.state.path==="contact"?
 
           <div className="text-center">
-            <h1 className=" text-light mb-5" style={{fontSize:'31px'}}></h1>
             <h4 className=" text-light mt-3">
             175 Lynden Road, Brantford ON N3R 8A7, Canada
             </h4>

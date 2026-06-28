@@ -114,7 +114,7 @@ export class SignIn extends Component {
     return(
       <div className="text-center mt-0">
         <p className="lead text-sm text-muted text-center">
-          By signing up for you agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>.
+          By signing up you agree to the Terms and Conditions and Privacy Policy.
         </p>
       </div>
     )

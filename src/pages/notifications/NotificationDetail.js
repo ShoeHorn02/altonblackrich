@@ -1,45 +1,25 @@
 import React from "react";
-import { loginFlag } from '../../redux/actions/auth';
-import store from "../../redux/store/index";
 import { Redirect } from "react-router-dom";
 import {
   Card,
   CardBody,
   CardHeader,
-  Form,
-  Media,
   DropdownItem,
   DropdownMenu,
   DropdownToggle,
   UncontrolledDropdown,
   CardTitle,
-  Table,
-  Badge
+  Table
 } from "reactstrap";
-import UnfollowButton from "../../components/Social/Buttons/UnfollowButton"
-import FollowButton from "../../components/Social/Buttons/FollowButton"
 import { connect } from 'react-redux';
 import ProfilePhoto from '../../components/Social/ProfilePhoto/ProfilePhoto'
 import { MoreVertical, RefreshCw } from "react-feather";
-
-import BootstrapTable from "react-bootstrap-table-next";
-import { Search } from "react-bootstrap-table2-toolkit";
-import paginationFactory from "react-bootstrap-table2-paginator";
-import avatar1 from "../../assets/img/avatars/avatar.jpg";
-import avatar2 from "../../assets/img/avatars/avatar-2.jpg";
-import avatar3 from "../../assets/img/avatars/avatar-3.jpg";
-import avatar4 from "../../assets/img/avatars/avatar-4.jpg";
-import avatar5 from "../../assets/img/avatars/avatar-5.jpg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faComments,
   faUser,
-  faPlusCircle,
-  faEnvelopeOpen,
-  faBell,
-  faThumbsUp,
-  faComment
+  faThumbsUp
 } from "@fortawesome/free-solid-svg-icons";
 
 

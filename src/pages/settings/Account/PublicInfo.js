@@ -19,6 +19,7 @@ import UploadProfilePicture from "../../../components/Social/UploadProfilePhoto/
 import {
   API_USER_PROFILES_FILTER
 } from '../../../redux/actions/API';
+import axios from "axios";
 import { keyConfig } from '../../../redux/actions/auth';
 import { loadUser } from '../../../redux/actions/auth';
 

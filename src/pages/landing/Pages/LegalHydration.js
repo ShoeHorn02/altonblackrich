@@ -138,7 +138,7 @@ const LegalHydration = () => {
 <h2>Contact Us</h2>
 <p>If you have any questions about this Privacy Policy, You can contact us:</p>
 <ul>
-<li>By visiting this page on our website: <a href="https://altonblackrich.com/" rel="external nofollow noopener" target="_blank" rel="noopener noreferrer">https://altonblackrich.com/</a></li>
+<li>By visiting this page on our website: <a href="https://altonblackrich.com/" rel="external nofollow noopener noreferrer" target="_blank">https://altonblackrich.com/</a></li>
 </ul>
     </div>
   );

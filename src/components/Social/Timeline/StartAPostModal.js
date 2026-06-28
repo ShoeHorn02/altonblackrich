@@ -2,19 +2,12 @@ import React, { useState }  from "react";
 import { toastr } from "react-redux-toastr";
 import {
   Button,
-  Card,
-  CardBody,
-  CardHeader,
-  CardTitle,
   Modal,
   ModalBody,
   ModalFooter,
   ModalHeader,
 } from "reactstrap";
-import { deleteUser } from '../../../redux/actions/social';
-import { logout } from "../../../redux/actions/auth";
 import { connect } from 'react-redux';
-import store from "../../../redux/store/index";
 
 import { faPenAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -22,7 +15,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ModalPost = (props) => {
   const {
-    buttonLabel,
     className
   } = props;
 

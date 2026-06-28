@@ -461,7 +461,6 @@ class Navbar_Main extends React.Component {
       display_notification_flag: null,
       display_notification_trigger: 0,
       display_notification_initial: 0,
-      socketRef: null,
 
       title: "",
       message: "",

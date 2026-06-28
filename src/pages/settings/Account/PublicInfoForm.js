@@ -1,50 +1,19 @@
 import React from "react";
-import Select from 'react-select'
 import Loader from "../../../components/Loader";
 import {
-  Breadcrumb,
-  BreadcrumbItem,
   Button,
-  Card,
-  CardBody,
-  CardHeader,
-  CardTitle,
   Col,
-  Container,
-  DropdownItem,
-  DropdownMenu,
-  DropdownToggle,
   Form,
   FormGroup,
   Input,
   Label,
-  ListGroup,
-  ListGroupItem,
-  Row,
-  UncontrolledDropdown
+  Row
 } from "reactstrap";
-import { MoreVertical, RefreshCw } from "react-feather";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUpload } from "@fortawesome/free-solid-svg-icons";
 import Location from '../../../components/Social/UserInfo/Location'
 import { postFirstLastName } from '../../../redux/actions/social';
 import { connect } from 'react-redux';
 import store from "../../../redux/store/index";
-
-import { nameChange } from '../../../redux/actions/auth';
-
-
-
-
-import Header from "../../../components/Header";
-
-
-import { Link } from "react-router-dom";
-
 import {
-  API_LOCATION,
-  API_USER_PROFILES,
-  API_USER_PROFILES_FILTER,
   API_USER_FIRSTNAME_LASTNAME,
   API_USER_HEADING
 } from '../../../redux/actions/API';
@@ -55,58 +24,11 @@ import { loadUser } from '../../../redux/actions/auth';
 
 
 
-const customStyles = {
-  control: (base, state) => ({
-    ...base,
-    fontFamily: 'Arial, Helvetica, sans-serif',
-    fontSize: 14,
-    border: state.isFocused ? 0 : 0,
-    boxShadow: state.isFocused ? 0 : 0,
-    cursor: 'text',
-    borderRadius: 0,
-    width: '250px',
-    background: '#f8f9fa'
-
-  }),
-
-
-
-  option: (styles, { isFocused }) => {
-    return {
-      ...styles,
-      cursor: 'pointer',
-      backgroundColor: isFocused ? 'white' : 'white',
-      color: isFocused ? 'rgba(255, 80, 86)' : 'black',
-      lineHeight: 2,
-    }
-  },
-
-  input: styles => ({
-    ...styles,
-    color: 'black',
-    fontFamily: 'Arial, Helvetica, sans-serif',
-  }),
-
-  menu: styles => ({
-    ...styles,
-    marginTop: 0,
-    boxShadow: 'none',
-    borderRadius: 0,
-  }),
-
-  singleValue: styles => ({
-    ...styles,
-    color: 'rgba(255, 80, 86)',
-  }),
-}
-
-
-
 
 
 async function UpdatePublicInfo(userid, firstname,lastname, changeflag) {
-  const resultFollow = await store.dispatch(postFirstLastName(userid, firstname,lastname));
-  const changeflagblock = await changeflag('1');
+  await store.dispatch(postFirstLastName(userid, firstname,lastname));
+  await changeflag('1');
  }
 
 
@@ -139,7 +61,6 @@ class Default extends React.Component {
 
 
     fetchfirstlastName = () =>  {
-      const memberID = store.getState().auth.user.pk
       axios.get(`${API_USER_FIRSTNAME_LASTNAME}`, keyConfig(store.getState)).then(res => {
         this.setState({
           api_first_name_last_name : res.data[0],
