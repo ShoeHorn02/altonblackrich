@@ -62,7 +62,7 @@ class Body extends React.Component {
 
 
         <NavItem>
-          <NavLink href="#" style={mystyle}>2021 AltonBlackRich Inc.</NavLink>
+          <NavLink href="#" style={mystyle}>{new Date().getFullYear()} AltonBlackRich Inc.</NavLink>
         </NavItem>
       </Nav>
     )
